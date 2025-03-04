@@ -19,16 +19,16 @@ public class TakeoffAndLand {
     drone.getAction().arm()
           .doOnComplete(() -> logger.debug("Arming..."))
           .doOnError(throwable -> logger.error("Failed to arm: "
-                  + ((Action.ActionException) throwable).getCode()))
+                  + ((Action.ActionException) throwable).getMessage()))
           .andThen(drone.getAction().takeoff()
             .doOnComplete(() -> logger.debug("Taking off..."))
             .doOnError(throwable -> logger.error("Failed to take off: "
-                    + ((Action.ActionException) throwable).getCode())))
+                    + ((Action.ActionException) throwable).getMessage())))
           .delay(5, TimeUnit.SECONDS)
           .andThen(drone.getAction().land()
             .doOnComplete(() -> logger.debug("Landing..."))
             .doOnError(throwable -> logger.error("Failed to land: "
-                    + ((Action.ActionException) throwable).getCode())))
+                    + ((Action.ActionException) throwable).getMessage())))
           .subscribe(latch::countDown, throwable -> latch.countDown());
 
     try {
