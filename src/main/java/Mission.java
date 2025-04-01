@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mission {
-    private ArrayList<MissionPoint> MissionPoints;
+    private ArrayList<MissionPoint> missionPoints = new ArrayList<>();
 
-    public void addMissionPoint(double Breite, double Höhe, double Länge) {
-        MissionPoint point = new MissionPoint(Breite, Höhe, Länge);
-        MissionPoints.add(point);
+    public void addMissionPoint(double breite, double hoehe, double laenge) {
+        missionPoints.add(new MissionPoint(breite, hoehe, laenge));
     }
 
     public ArrayList<MissionPoint> getMissionPoints() {
-        return MissionPoints;
+        return missionPoints;
     }
 }
+

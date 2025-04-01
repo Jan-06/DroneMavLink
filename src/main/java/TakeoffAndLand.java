@@ -61,7 +61,7 @@ public class TakeoffAndLand {
             true,
             0f,
             0f,
-            Mission.MissionItem.CameraAction.NONE,
+            Mission.MissionItem.CameraAction.TAKE_PHOTO,
             0f,
             0d,
             0f,
