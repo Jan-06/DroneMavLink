@@ -3,6 +3,7 @@ import io.reactivex.CompletableSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,7 +19,7 @@ public class TakeoffAndLand {
     io.mavsdk.System drone = new io.mavsdk.System();
     CountDownLatch latch = new CountDownLatch(1);
 
-    System.out.print("Gib Flughöhe ein (Meter): ");
+    System.out.print("Gib Flughoehe ein (Meter): ");
     float height = sc.nextFloat();
 
     System.out.println("Gib 4 Koordinaten ein (links unten → links oben → rechts oben → rechts unten):");
@@ -98,15 +99,5 @@ public class TakeoffAndLand {
             0f,
             0f,
             0f);
-  }
-
-  public static class Coordinate {
-    public double lat;
-    public double lon;
-
-    public Coordinate(double lat, double lon) {
-      this.lat = lat;
-      this.lon = lon;
-    }
   }
 }

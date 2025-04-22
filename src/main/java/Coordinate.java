@@ -6,4 +6,9 @@ public class Coordinate {
         this.lat = lat;
         this.lon = lon;
     }
+
+    @Override
+    public String toString() {
+        return String.format("(%.6f, %.6f)", lat, lon);
+    }
 }
