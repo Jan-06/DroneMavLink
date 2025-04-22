@@ -16,7 +16,7 @@ public class TakeoffAndLand {
     Scanner sc = new Scanner(System.in);
     logger.debug("Starting dynamic grid mission...");
 
-    io.mavsdk.System drone = new io.mavsdk.System();
+    io.mavsdk.System drone = new io.mavsdk.System("localhost", 1152);
     CountDownLatch latch = new CountDownLatch(1);
 
     System.out.print("Gib Flughoehe ein (Meter): ");
